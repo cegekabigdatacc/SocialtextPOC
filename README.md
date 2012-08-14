@@ -7,6 +7,7 @@ Resources
 =============
 * https://www.socialtext.net/open/
 * https://www.socialtext.net/st-rest-docs/offset_and_limit_query_parameters
+* https://www.socialtext.net/st-rest-docs/authentication
 
 Todo
 ======
