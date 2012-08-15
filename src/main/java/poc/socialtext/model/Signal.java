@@ -1,5 +1,7 @@
 package poc.socialtext.model;
 
+import java.util.Arrays;
+
 public class Signal {
 
     private Long id;
@@ -26,5 +28,16 @@ public class Signal {
 
     public Long[] getLikers() {
         return likers;
+    }
+
+    @Override
+    public String toString() {
+        return "Signal{" +
+                "id=" + id +
+                ", userId=" + userId +
+                ", body='" + body + '\'' +
+                ", numberReplies=" + numberReplies +
+                ", likers=" + (likers == null ? null : Arrays.asList(likers)) +
+                '}';
     }
 }
