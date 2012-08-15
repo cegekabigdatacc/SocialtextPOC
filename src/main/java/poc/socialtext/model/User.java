@@ -1,4 +1,4 @@
-package data.model;
+package poc.socialtext.model;
 
 public class User {
 

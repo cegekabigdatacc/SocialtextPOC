@@ -1,4 +1,4 @@
-package data.model;
+package poc.socialtext.model;
 
 import com.google.gson.Gson;
 import com.jayway.restassured.specification.RequestSpecification;
@@ -10,8 +10,8 @@ import static org.fest.assertions.Assertions.assertThat;
 
 public class SocialtextInvocationAPITest {
 
-    public static final String USER = "adelina.caramet@cegeka.be";
-    public static final String PASS = "";
+    public static final String USER = "cosmin.ene@cegeka.be";
+    public static final String PASS = "c0smin";
     public Integer offset = 0;
     public Integer limit = 100;
 
@@ -26,13 +26,13 @@ public class SocialtextInvocationAPITest {
 
     @Test
     public void canGetAUserFromSocialText() {
-        assertThat(getAllSignals()).isEqualTo(170);
+        assertThat(getAllSignals()).isEqualTo(151);
     }
     
     private Integer getAllSignals() {
         String path = "";
         Integer numberOfSignals = 0;
-        for (int i = offset; i < limit + offset; i=i+limit) {
+        for (int i = offset; i < (limit + offset); i = i + limit) {
 
             path = "https://cegeka.socialtext.net/data/signals?limit="+limit+"&offset="+offset;
             String json = request.get(path).asString();
