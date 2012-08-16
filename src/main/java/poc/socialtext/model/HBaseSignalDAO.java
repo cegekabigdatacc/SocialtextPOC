@@ -21,12 +21,13 @@ public class HBaseSignalDAO {
         }
     }
 
-    public void putRawSignals(Signal[] rawSignals) {
+    public void putRawSignals(List<String> rawSignals) {
         List<Put> puts = new LinkedList<Put>();
         long id = 1;
-        for (Signal rawSignal : rawSignals) {
-            Put put = new Put((Bytes.toBytes(id++)));
-            put.add(Bytes.toBytes("data"), Bytes.toBytes("raw"), Bytes.toBytes(rawSignal.toJson()));
+        for (String rawSignal : rawSignals) {
+            Put put = new Put((Bytes.toBytes(id++ + "")));
+            put.add(Bytes.toBytes("data"), Bytes.toBytes("raw"), Bytes.toBytes(rawSignal));
+            puts.add(put);
         }
         try {
             table.put(puts);

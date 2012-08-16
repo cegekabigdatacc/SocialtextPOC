@@ -32,10 +32,6 @@ public class Signal {
         return likers;
     }
 
-    public String toJson() {
-        return new Gson().toJson(this);
-    }
-
     @Override
     public String toString() {
         return "Signal{" +
