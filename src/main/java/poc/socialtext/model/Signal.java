@@ -1,5 +1,7 @@
 package poc.socialtext.model;
 
+import com.google.gson.Gson;
+
 import java.util.Arrays;
 
 public class Signal {
@@ -28,6 +30,10 @@ public class Signal {
 
     public Long[] getLikers() {
         return likers;
+    }
+
+    public String toJson() {
+        return new Gson().toJson(this);
     }
 
     @Override

@@ -18,6 +18,7 @@ public class DataMiner {
         String response = r.queryParams(getParams()).accept(MediaType.APPLICATION_JSON_TYPE).get(String.class);
         Signal[] signals = new Gson().fromJson(response, Signal[].class);
         System.out.println(Arrays.toString(signals));
+        new HBaseSignalDAO().putRawSignals(signals);
     }
 
     private static Client getClient() {
