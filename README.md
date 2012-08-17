@@ -30,9 +30,13 @@ C. Clustering
 
 Todo
 ======
-* create skeleton POC
-* list users with Socialtext's REST api
-* list signals with Socialtext's REST api
+* [done] create skeleton POC
+* [done] list users with Socialtext's REST api
+* [done] list signals with Socialtext's REST api
+* hbase table create script
+* truncate hbase table on parse signals
+* parse all signals
+* save users in a table
 
 Socialtext REST api
 ====================
